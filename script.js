@@ -9,8 +9,8 @@ form.addEventListener('submit', function(e) {
     let numInput = document.getElementById('numUser');
     let numUsers = numInput.value.trim();
 
-    if (Number(numUsers) <= 0) {
-        alert("Please enter a number of users.");
+    if (numUsers <= 0 || numUsers > 1000) {
+        alert("Please enter a valid number of users between 1 and 1000.");
         return;
     }
 
