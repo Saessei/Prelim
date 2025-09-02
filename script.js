@@ -1,4 +1,3 @@
-
 let form = document.getElementById('getForm'); 
 let users = [];
 let currentUser = null;
@@ -128,6 +127,14 @@ document.getElementById('editUserBtn').onclick = function() {
             user.phone = document.getElementById('editPhone').value;
             user.cell = document.getElementById('editCell').value;
             user.dob.date = document.getElementById('editDob').value;
+
+            let editedAddress = document.getElementById('editFullAddress').value;
+            let parts = editedAddress.split(',').map(p => p.trim());
+
+            if (parts.length >= 5) {
+                let addressParts = parts[0].split(" ");
+                user.location.country = parts[3];
+            }
 
             bootstrap.Modal.getInstance(document.getElementById('userModal')).hide();
         };
