@@ -118,13 +118,17 @@ document.getElementById('editUserBtn').onclick = function() {
             user.name.first = document.getElementById('editFirst').value;
             user.name.last = document.getElementById('editLast').value;
             user.gender = document.getElementById('editGender').value;
-            fullAddress = document.getElementById('editFullAddress').value;
+            user.fullAddress = document.getElementById('editFullAddress').value;
             user.email = document.getElementById('editEmail').value;
             user.phone = document.getElementById('editPhone').value;
             user.cell = document.getElementById('editCell').value;
-            user.dob.date = document.getElementById('editDob').value;   
+            user.dob.date = document.getElementById('editDob').value;
 
-            openUserModal(currentUser);
+            bootstrap.Modal.getInstance(document.getElementById('userModal')).hide();
         };
     }
 };
+
+document.getElementById('userModal').addEventListener('hidden.bs.modal', function () {
+    renderUsers();
+});
