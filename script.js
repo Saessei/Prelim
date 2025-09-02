@@ -51,8 +51,6 @@ function renderUsers() {
 
         tableBody.appendChild(row);
     }        
-    
-
 }
 
 document.getElementById('nameBasis').addEventListener('change', renderUsers);
@@ -79,14 +77,11 @@ function openUserModal(index) {
             <div class="user-pill"><b>Telephone Number</b><br>${user.cell}</div>
             <div class="user-pill"><b>Date of birth</b><br>${new Date(user.dob.date).toLocaleDateString()}</div>
             <div class="user-pill"><b>Gender</b><br>${user.gender}</div>
-        </div>
-
-    `;
+        </div>`;
 
     let modal = new bootstrap.Modal(document.getElementById('userModal'));
     modal.show();
 }
-
 
 document.getElementById('deleteUserBtn').onclick = function() {
     if (currentUser !== null) {
@@ -106,15 +101,15 @@ document.getElementById('editUserBtn').onclick = function() {
 
         modalBody.innerHTML =
             '<img src="' + user.picture.large + '" class="rounded-circle mb-3" style="width:100px;height:100px;">' +
-            '<div><input type="text" id="editTitle" value="' + user.name.title + '"></div>' +
-            '<div><input type="text" id="editFirst" value="' + user.name.first + '"></div>' +
-            '<div><input type="text" id="editLast" value="' + user.name.last + '"></div>' +
-            '<div><input type="text" id="editGender" value="' + user.gender + '"></div>' +
-            '<div><input type="text" id="editFullAddress" value="' + fullAddress + '"></div>' +
-            '<div><input type="email" id="editEmail" value="' + user.email + '"></div>' +
-            '<div><input type="text" id="editPhone" value="' + user.phone + '"></div>' +
-            '<div><input type="text" id="editCell" value="' + user.cell + '"></div>' +
-            '<div><input type="date" id="editDob" value="' + user.dob.date.substring(0, 10) + '"></div>' +
+            '<div><input type="text" class="form-control rounded-pill" id="editTitle" value="' + user.name.title + '"></div>' +
+            '<div><input type="text" class="form-control rounded-pill" id="editFirst" value="' + user.name.first + '"></div>' +
+            '<div><input type="text" class="form-control rounded-pill" id="editLast" value="' + user.name.last + '"></div>' +
+            '<div><input type="text" class="form-control rounded-pill" id="editGender" value="' + user.gender + '"></div>' +
+            '<div><input type="text" class="form-control rounded-pill" id="editFullAddress" value="' + fullAddress + '"></div>' +
+            '<div><input type="email" class="form-control rounded-pill" id="editEmail" value="' + user.email + '"></div>' +
+            '<div><input type="text" class="form-control rounded-pill" id="editPhone" value="' + user.phone + '"></div>' +
+            '<div><input type="text" class="form-control rounded-pill" id="editCell" value="' + user.cell + '"></div>' +
+            '<div><input type="date" class="form-control rounded-pill" id="editDob" value="' + user.dob.date.substring(0, 10) + '"></div>' +
             '<button id="saveEditBtn">Save</button>';
 
         document.getElementById('saveEditBtn').onclick = function() {
