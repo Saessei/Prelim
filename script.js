@@ -44,13 +44,16 @@ function renderUsers() {
             '<td>' + user.email + '</td>' +
             '<td>' + user.location.country + '</td>';
 
+
         row.ondblclick = function() {
             let index = this.getAttribute('data-index');
             openUserModal(index);
         };
 
         tableBody.appendChild(row);
-    }
+    }        
+    
+
 }
 
 document.getElementById('nameBasis').addEventListener('change', renderUsers);
@@ -76,7 +79,9 @@ function openUserModal(index) {
             <div class="user-pill"><b>Phone</b><br>${user.phone}</div>
             <div class="user-pill"><b>Telephone Number</b><br>${user.cell}</div>
             <div class="user-pill"><b>Date of birth</b><br>${new Date(user.dob.date).toLocaleDateString()}</div>
+            <div class="user-pill"><b>Gender</b><br>${user.gender}</div>
         </div>
+
     `;
 
     let modal = new bootstrap.Modal(document.getElementById('userModal'));
