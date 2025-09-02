@@ -74,8 +74,8 @@ function openUserModal(index) {
             <div class="user-pill"><b>Address</b><br>${fullAddress}</div>
             <div class="user-pill"><b>Email</b><br>${user.email}</div>
             <div class="user-pill"><b>Phone</b><br>${user.phone}</div>
-            <div class="user-pill"><b>Cell</b><br>${user.cell}</div>
-            <div class="user-pill"><b>DOB</b><br>${new Date(user.dob.date).toLocaleDateString()}</div>
+            <div class="user-pill"><b>Telephone Number</b><br>${user.cell}</div>
+            <div class="user-pill"><b>Date of birth</b><br>${new Date(user.dob.date).toLocaleDateString()}</div>
         </div>
     `;
 
