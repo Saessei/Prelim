@@ -59,7 +59,6 @@ function openUserModal(index) {
     currentUser = index;
     let user = users[index];
     let modalBody = document.getElementById('modalBody');
-
     let fullAddress = user.location.street.number + ' ' + user.location.street.name + ', ' +
                       user.location.city + ', ' + user.location.state + ', ' +
                       user.location.country + ', ' + user.location.postcode;
