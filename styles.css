@@ -87,6 +87,7 @@ th {
     font-weight: 500;
     border: none ;
     background-color: #e9e9e9;
+    margin: 0 10px;
 }
 
 td {
@@ -102,7 +103,6 @@ td {
     width: 100%;
     background: transparent;
 }
-
 
 .user-card {
     background: #999;              

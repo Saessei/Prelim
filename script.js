@@ -99,18 +99,42 @@ document.getElementById('editUserBtn').onclick = function() {
                           user.location.city + ', ' + user.location.state + ', ' +
                           user.location.country + ', ' + user.location.postcode;
 
-        modalBody.innerHTML =
-            '<img src="' + user.picture.large + '" class="rounded-circle mb-3" style="width:100px;height:100px;">' +
-            '<div><input type="text" class="form-control rounded-pill" id="editTitle" value="' + user.name.title + '"></div>' +
-            '<div><input type="text" class="form-control rounded-pill" id="editFirst" value="' + user.name.first + '"></div>' +
-            '<div><input type="text" class="form-control rounded-pill" id="editLast" value="' + user.name.last + '"></div>' +
-            '<div><input type="text" class="form-control rounded-pill" id="editGender" value="' + user.gender + '"></div>' +
-            '<div><input type="text" class="form-control rounded-pill" id="editFullAddress" value="' + fullAddress + '"></div>' +
-            '<div><input type="email" class="form-control rounded-pill" id="editEmail" value="' + user.email + '"></div>' +
-            '<div><input type="text" class="form-control rounded-pill" id="editPhone" value="' + user.phone + '"></div>' +
-            '<div><input type="text" class="form-control rounded-pill" id="editCell" value="' + user.cell + '"></div>' +
-            '<div><input type="date" class="form-control rounded-pill" id="editDob" value="' + user.dob.date.substring(0, 10) + '"></div>' +
-            '<button id="saveEditBtn">Save</button>';
+        modalBody.innerHTML = `
+            <div class="user-card">
+                <div class="user-avatar text-center mb-3">
+                    <img src="${user.picture.large}" class="rounded-circle" style="width:100px;height:100px;"></div>
+
+                <div>
+                    <input type="text" class="form-control rounded-pill" id="editTitle" style= "width: 500px;" value="${user.name.title}">
+                </div>
+                <div>
+                    <input type="text" class="form-control rounded-pill" id="editFirst" style= "width: 500px;" value="${user.name.first}">
+                </div>
+                <div>
+                    <input type="text" class="form-control rounded-pill" id="editLast" style= "width: 500px;" value="${user.name.last}">
+                </div>
+                <div >
+                    <input type="text" class="form-control rounded-pill" id="editGender" style= "width: 500px;" value="${user.gender}">
+                </div>
+                <div >
+                    <input type="text" class="form-control rounded-pill" id="editFullAddress" style= "width: 500px;" value="${fullAddress}">
+                </div>
+                <div>
+                    <input type="email" class="form-control rounded-pill" id="editEmail" style= "width: 500px;" value="${user.email}">
+                </div>
+                <div>
+                    <input type="text" class="form-control rounded-pill" id="editPhone" style= "width: 500px;" value="${user.phone}">
+                </div>
+                <div>
+                    <input type="text" class="form-control rounded-pill" id="editCell" style= "width: 500px;" value="${user.cell}">
+                </div>
+                <div>
+                    <input type="date" class="form-control rounded-pill" id="editDob" style= "width: 500px;" value="${user.dob.date.substring(0, 10)}">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary rounded-pill px-4" id="saveEditBtn">Save</button>
+                </div>
+            </div>`;
 
         document.getElementById('saveEditBtn').onclick = function() {
             user.name.title = document.getElementById('editTitle').value;
@@ -124,7 +148,7 @@ document.getElementById('editUserBtn').onclick = function() {
             user.dob.date = document.getElementById('editDob').value;
 
             let editedAddress = document.getElementById('editFullAddress').value;
-            let parts = editedAddress.split(',').map(p => p.trim());
+            let parts = editedAddress.split(',').map(p => p.trim()); 
 
             if (parts.length >= 5) {
                 let addressParts = parts[0].split(" ");
